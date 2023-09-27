@@ -28,14 +28,82 @@
 @prefix edam: <http://edamontology.org/> .
 @prefix sio:  <https://identifiers.org/sio:> .
 
-:ls a rml:LogicalSource;
-    rml:source "data/ctdbase/CTD_chem_gene_ixns.parquet";
-    rml:referenceFormulation ql:CSV.
 
-#  [1] "ChemicalName"       "ChemicalID"         "CasRN"
-#  [4] "GeneSymbol"         "GeneID"             "GeneForms"
-#  [7] "Organism"           "OrganismID"         "Interaction"
-# [10] "InteractionActions" "PubMedIDs"
+:ls_exposure_events a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_exposure_events.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_diseases a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_diseases.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_chemicals_diseases a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_chemicals_diseases.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_diseases_pathways a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_diseases_pathways.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_chem_gene_ixn_types a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_chem_gene_ixn_types.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_genes a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_genes.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_chem_pathways_enriched a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_chem_pathways_enriched.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_pathways a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_pathways.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_pheno_term_ixns a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_pheno_term_ixns.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_Phenotype-Disease_cellular_component_associations a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_Phenotype-Disease_cellular_component_associations.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_genes_diseases a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_genes_diseases.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_anatomy a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_anatomy.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_Phenotype-Disease_biological_process_associations a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_Phenotype-Disease_biological_process_associations.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_Phenotype-Disease_molecular_function_associations a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_Phenotype-Disease_molecular_function_associations.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_chem_gene_ixns a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_chem_gene_ixns.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_chemicals a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_chemicals.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_genes_pathways a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_genes_pathways.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_exposure_studies a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_exposure_studies.parquet";
+  rml:referenceFormulation ql:CSV.
+
+:ls_chem_go_enriched a rml:LogicalSource;
+  rml:source "data/ctdbase/CTD_chem_go_enriched.parquet";
+  rml:referenceFormulation ql:CSV.
 
 <#casMap> rr:template "https://identifiers.org/cas/{CasRN}";
     rr:class ex:ChemicalEntity, cheminf:000000, cheminf:000446 .
@@ -45,7 +113,7 @@
 
 <TriplesMap1_RecordTopLevel> a rr:TriplesMap;
 
-  rml:logicalSource :ls;
+  rml:logicalSource :ls_chem_gene_ixns;
 
   rr:subjectMap [
     rr:template "http://example.com/ctdbase/chem-gene-ixn/chem/{ChemicalID}/gene/{GeneID}";
