@@ -1,0 +1,34 @@
+# Brick DVC stages
+# See https://dvc.org/doc/user-guide/project-structure/dvcyaml-files#pipelines-files-dvcyaml
+
+# The complete process can be executed using:
+# dvc repro
+# If you want to force redoing the process use 
+# dvc repro -f
+# Individual stage can be executed using: 
+# dvc repro <stage>
+
+stages:
+  bb_path:
+    cmd: stages/00_bb_path.sh
+    deps:
+      - stages/00_bb_path.sh
+    outs:
+      - data/brick-manifest
+  rml:
+    cmd: stages/01_rml.sh
+    deps:
+      - stages/01_rml.sh
+      - data/brick-manifest
+      - stages/ctdbase.ini
+      - stages/ctdbase.rml.ttl
+      - stages/ctdbase-udfs.py
+    outs:
+      - raw
+  build:
+    cmd: stages/02_build.sh
+    deps:
+      - stages/02_build.sh
+      - raw
+    outs:
+      - brick
