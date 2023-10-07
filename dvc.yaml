@@ -14,12 +14,12 @@ stages:
     deps:
       - stages/00_bb_path.sh
     outs:
-      - data/brick-manifest
+      - data-source/brick-manifest
   rml:
     cmd: stages/01_rml.sh
     deps:
       - stages/01_rml.sh
-      - data/brick-manifest
+      - data-source/brick-manifest
       - stages/ctdbase.ini
       - stages/ctdbase.rml.ttl
       - stages/ctdbase-udfs.py

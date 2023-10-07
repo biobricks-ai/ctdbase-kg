@@ -1,6 +1,5 @@
 @base     <http://example.com/base/> .
 @prefix : <http://example.com/base/> .
-@prefix ex: <http://example.com/> .
 
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix rml: <http://semweb.mmlab.be/ns/rml#> .
@@ -11,22 +10,6 @@
 
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
-
-@prefix wd: <http://www.wikidata.org/entity/> .
-@prefix wds: <http://www.wikidata.org/entity/statement/> .
-@prefix wdv: <http://www.wikidata.org/value/> .
-@prefix wdt: <http://www.wikidata.org/prop/direct/> .
-@prefix wikibase: <http://wikiba.se/ontology#> .
-@prefix p: <http://www.wikidata.org/prop/> .
-@prefix ps: <http://www.wikidata.org/prop/statement/> .
-@prefix pq: <http://www.wikidata.org/prop/qualifier/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix bd: <http://www.bigdata.com/rdf#> .
-
-@prefix cas: <http://identifiers.org/cas/> .
-@prefix cheminf: <http://semanticscience.org/resource/CHEMINF_> .
-@prefix edam: <http://edamontology.org/> .
-
 
 :ls_exposure_events a rml:LogicalSource;
   rml:source "data/ctdbase/CTD_exposure_events.parquet";
@@ -103,44 +86,3 @@
 :ls_chem_go_enriched a rml:LogicalSource;
   rml:source "data/ctdbase/CTD_chem_go_enriched.parquet";
   rml:referenceFormulation ql:CSV.
-
-<#casMap> rr:template "http://identifiers.org/cas/{CasRN}";
-  # rr:class used when part of rr:subjectMap
-  rr:class ex:ChemicalEntity, cheminf:000000, cheminf:000446 .
-
-<#meshChemIDMap> rr:template "http://id.nlm.nih.gov/mesh/{ChemicalID}";
-  # rr:class used when part of rr:subjectMap
-  rr:class ex:ChemicalEntity, cheminf:000000, edam:data_1177 .
-
-<TM_chem_gene_ixns_Top> a rr:TriplesMap;
-
-  rml:logicalSource :ls_chem_gene_ixns;
-
-  rr:subjectMap [
-    rr:template "http://example.com/ctdbase/chem-gene-ixn/chem/{ChemicalID}/gene/{GeneID}";
-    rr:class ex:chem-gene-ixn
-  ];
-
-  rr:predicateObjectMap [
-    rr:predicate ex:chemical_id ;
-    rr:objectMap <#casMap>
-  ];
-
-  rr:predicateObjectMap [
-    rr:predicate ex:chemical_id ;
-    rr:objectMap <#meshChemIDMap>
-  ];
-
-  rr:predicateObjectMap [
-    rr:predicate ex:gene_id ;
-    rr:objectMap [ rml:reference "GeneID" ]
-  ]
-.
-
-<TM_chem_gene_ixns_CASRN> a rr:TriplesMap;
-  rml:logicalSource :ls;
-  rr:subjectMap <#casMap> .
-
-<TM_chem_gene_ixns_ChemID> a rr:TriplesMap;
-  rml:logicalSource :ls;
-  rr:subjectMap <#meshChemIDMap> .

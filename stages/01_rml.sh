@@ -12,7 +12,7 @@ mkdir -p $rawpath
 echo "Raw path: $rawpath"
 
 # Process RML mapping
-python3 -m morph_kgc stages/data-ctdbase.ini
+python3 -m morph_kgc stages/ctdbase.ini
 
 # Sort in-place for reproducible hash
 sort -o $rawpath/knowledge-graph.nt $rawpath/knowledge-graph.nt 
