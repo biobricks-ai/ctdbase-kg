@@ -7,7 +7,7 @@ localpath=$(pwd)
 echo "Local path: $localpath"
 
 # Create the list directory to save list of remote files and directories
-datapath="$localpath/data"
+datapath="$localpath/data-source"
 echo "Data path: $datapath"
 mkdir -p $datapath
 cd $datapath;

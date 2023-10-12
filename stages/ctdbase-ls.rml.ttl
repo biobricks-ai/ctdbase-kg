@@ -12,77 +12,77 @@
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 
 :ls_exposure_events a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_exposure_events.parquet";
+  rml:source "data-source/ctdbase/CTD_exposure_events.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_diseases a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_diseases.parquet";
+  rml:source "data-source/ctdbase/CTD_diseases.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_chemicals_diseases a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_chemicals_diseases.parquet";
+  rml:source "data-source/ctdbase/CTD_chemicals_diseases.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_diseases_pathways a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_diseases_pathways.parquet";
+  rml:source "data-source/ctdbase/CTD_diseases_pathways.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_chem_gene_ixn_types a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_chem_gene_ixn_types.parquet";
+  rml:source "data-source/ctdbase/CTD_chem_gene_ixn_types.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_genes a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_genes.parquet";
+  rml:source "data-source/ctdbase/CTD_genes.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_chem_pathways_enriched a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_chem_pathways_enriched.parquet";
+  rml:source "data-source/ctdbase/CTD_chem_pathways_enriched.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_pathways a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_pathways.parquet";
+  rml:source "data-source/ctdbase/CTD_pathways.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_pheno_term_ixns a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_pheno_term_ixns.parquet";
+  rml:source "data-source/ctdbase/CTD_pheno_term_ixns.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_Phenotype-Disease_cellular_component_associations a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_Phenotype-Disease_cellular_component_associations.parquet";
+  rml:source "data-source/ctdbase/CTD_Phenotype-Disease_cellular_component_associations.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_genes_diseases a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_genes_diseases.parquet";
+  rml:source "data-source/ctdbase/CTD_genes_diseases.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_anatomy a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_anatomy.parquet";
+  rml:source "data-source/ctdbase/CTD_anatomy.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_Phenotype-Disease_biological_process_associations a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_Phenotype-Disease_biological_process_associations.parquet";
+  rml:source "data-source/ctdbase/CTD_Phenotype-Disease_biological_process_associations.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_Phenotype-Disease_molecular_function_associations a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_Phenotype-Disease_molecular_function_associations.parquet";
+  rml:source "data-source/ctdbase/CTD_Phenotype-Disease_molecular_function_associations.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_chem_gene_ixns a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_chem_gene_ixns.parquet";
+  rml:source "data-source/ctdbase/CTD_chem_gene_ixns.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_chemicals a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_chemicals.parquet";
+  rml:source "data-source/ctdbase/CTD_chemicals.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_genes_pathways a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_genes_pathways.parquet";
+  rml:source "data-source/ctdbase/CTD_genes_pathways.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_exposure_studies a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_exposure_studies.parquet";
+  rml:source "data-source/ctdbase/CTD_exposure_studies.parquet";
   rml:referenceFormulation ql:CSV.
 
 :ls_chem_go_enriched a rml:LogicalSource;
-  rml:source "data/ctdbase/CTD_chem_go_enriched.parquet";
+  rml:source "data-source/ctdbase/CTD_chem_go_enriched.parquet";
   rml:referenceFormulation ql:CSV.

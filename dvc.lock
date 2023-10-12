@@ -1,92 +1,53 @@
 schema: '2.0'
 stages:
-  1-stage:
-    cmd: Rscript stages/01-stage.R
-    deps:
-    - path: stages/01-stage.R
-      md5: c468dc14527e00c339f146e1dba2bd3b
-      size: 118
-    outs:
-    - path: data/mtcars.parquet
-      md5: 77cf29accf9535522fad7db1486eff9a
-      size: 6243
   bb_path:
     cmd: stages/00_bb_path.sh
     deps:
     - path: stages/00_bb_path.sh
       hash: md5
-      md5: 7406ad5baf74246b197f1ab3f86fd650
-      size: 777
+      md5: 50ed80f35613636dcece79c09edce392
+      size: 784
     outs:
-    - path: data/brick-manifest
+    - path: data-source/brick-manifest
       hash: md5
       md5: e6339cad00e61b04d411c380c5a5e2db
       size: 81
-  download:
-    cmd: stages/01_build.sh
-    deps:
-    - path: data/brick-manifest
-      hash: md5
-      md5: e6339cad00e61b04d411c380c5a5e2db
-      size: 81
-    - path: stages/01_build.sh
-      hash: md5
-      md5: d1c0bfdc370f5644b551dff9b1be82be
-      size: 462
-    - path: stages/ctdbase-udfs.py
-      hash: md5
-      md5: 9aa13d467aa7ca6ca94b283dea7e5c22
-      size: 47
-    - path: stages/ctdbase.rml.ttl
-      hash: md5
-      md5: bc0b90c63193912209cf762322c8a333
-      size: 2505
-    - path: stages/data-ctdbase.ini
-      hash: md5
-      md5: a7acb10de632b70216b35d0ed7f53c73
-      size: 159
-    outs:
-    - path: brick
-      hash: md5
-      md5: 77640a63b1a318aab17460b5cbd0be0f.dir
-      size: 66267068
-      nfiles: 2
   rml:
     cmd: stages/01_rml.sh
     deps:
-    - path: data/brick-manifest
+    - path: data-source/brick-manifest
       hash: md5
       md5: e6339cad00e61b04d411c380c5a5e2db
       size: 81
     - path: stages/01_rml.sh
       hash: md5
-      md5: b7f020ea129c8020b91f427e42bc05b6
-      size: 396
+      md5: 7505592b21798dc600d9f0e61b8ada78
+      size: 399
     - path: stages/ctdbase-udfs.py
       hash: md5
       md5: 9aa13d467aa7ca6ca94b283dea7e5c22
       size: 47
     - path: stages/ctdbase.ini
       hash: md5
-      md5: a7acb10de632b70216b35d0ed7f53c73
-      size: 159
+      md5: f622c53601cf5b3b6f045678ee9160ef
+      size: 165
     - path: stages/ctdbase.rml.ttl
       hash: md5
-      md5: bc0b90c63193912209cf762322c8a333
-      size: 2505
+      md5: 33eb50621c04a4e17d38ff000ab6f702
+      size: 5096
     outs:
     - path: raw
       hash: md5
-      md5: 518cbdce4ed4751164478cb732e7aa1b.dir
-      size: 813697369
+      md5: d65ecd2c729ddd4b9b6d78cbe07503c5.dir
+      size: 819510532
       nfiles: 1
   build:
     cmd: stages/02_build.sh
     deps:
     - path: raw
       hash: md5
-      md5: 518cbdce4ed4751164478cb732e7aa1b.dir
-      size: 813697369
+      md5: d65ecd2c729ddd4b9b6d78cbe07503c5.dir
+      size: 819510532
       nfiles: 1
     - path: stages/02_build.sh
       hash: md5
@@ -95,6 +56,6 @@ stages:
     outs:
     - path: brick
       hash: md5
-      md5: 5ae6f45f3e0ff6f689a7c2adf5af9011.dir
-      size: 66267068
+      md5: f02908ed81fe8ae7f109c44e64675353.dir
+      size: 66264759
       nfiles: 2

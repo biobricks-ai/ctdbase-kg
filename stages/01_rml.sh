@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Script to create N-Triples graph using RML
 
 # Get local path
