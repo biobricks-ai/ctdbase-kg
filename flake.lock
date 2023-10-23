@@ -1,5 +1,52 @@
 {
   "nodes": {
+    "biobricks-R": {
+      "inputs": {
+        "flake-utils": [
+          "dev-shell",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "dev-shell",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1695748726,
+        "narHash": "sha256-+PyXIuejK2ck4HlZzoJQQ/Ucu/7HonEfB4wuhcsBjKU=",
+        "owner": "biobricks-ai",
+        "repo": "biobricks-R",
+        "rev": "c22e6b225d11a4cbd472b70fdc5b6c6f4acf5a53",
+        "type": "github"
+      },
+      "original": {
+        "owner": "biobricks-ai",
+        "repo": "biobricks-R",
+        "type": "github"
+      }
+    },
+    "dev-shell": {
+      "inputs": {
+        "biobricks-R": "biobricks-R",
+        "flake-utils": "flake-utils",
+        "hdt-cpp": "hdt-cpp",
+        "morph-kgc": "morph-kgc",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1697471982,
+        "narHash": "sha256-uWUObHxB1SD4V68Ofm3RzlYgJm2TurkdYxlLhzm0two=",
+        "owner": "biobricks-ai",
+        "repo": "dev-shell",
+        "rev": "27904dcfdb492c52c64ed85316a789a9707659d8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "biobricks-ai",
+        "repo": "dev-shell",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -21,9 +68,11 @@
     "hdt-cpp": {
       "inputs": {
         "flake-utils": [
+          "dev-shell",
           "flake-utils"
         ],
         "nixpkgs": [
+          "dev-shell",
           "nixpkgs"
         ]
       },
@@ -44,9 +93,11 @@
     "morph-kgc": {
       "inputs": {
         "flake-utils": [
+          "dev-shell",
           "flake-utils"
         ],
         "nixpkgs": [
+          "dev-shell",
           "nixpkgs"
         ],
         "poetry2nix": "poetry2nix"
@@ -67,11 +118,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1695559356,
-        "narHash": "sha256-kXZ1pUoImD9OEbPCwpTz4tHsNTr4CIyIfXb3ocuR8sI=",
+        "lastModified": 1697226376,
+        "narHash": "sha256-cumLLb1QOUtWieUnLGqo+ylNt3+fU8Lcv5Zl+tYbRUE=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "261abe8a44a7e8392598d038d2e01f7b33cf26d0",
+        "rev": "898cb2064b6e98b8c5499f37e81adbdf2925f7c5",
         "type": "github"
       },
       "original": {
@@ -84,10 +135,12 @@
     "poetry2nix": {
       "inputs": {
         "flake-utils": [
+          "dev-shell",
           "morph-kgc",
           "flake-utils"
         ],
         "nixpkgs": [
+          "dev-shell",
           "morph-kgc",
           "nixpkgs"
         ]
@@ -108,10 +161,7 @@
     },
     "root": {
       "inputs": {
-        "flake-utils": "flake-utils",
-        "hdt-cpp": "hdt-cpp",
-        "morph-kgc": "morph-kgc",
-        "nixpkgs": "nixpkgs"
+        "dev-shell": "dev-shell"
       }
     },
     "systems": {
