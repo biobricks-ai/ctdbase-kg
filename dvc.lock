@@ -5,8 +5,8 @@ stages:
     deps:
     - path: stages/00_bb_path.sh
       hash: md5
-      md5: 50ed80f35613636dcece79c09edce392
-      size: 784
+      md5: d6e7dfd84a2e30b1d13d5f0b174e5367
+      size: 457
     outs:
     - path: data-source/brick-manifest
       hash: md5
@@ -33,21 +33,21 @@ stages:
       size: 165
     - path: stages/ctdbase.rml.ttl
       hash: md5
-      md5: 33eb50621c04a4e17d38ff000ab6f702
-      size: 5096
+      md5: 0ce6fa93d1f0c7a08ce179049082e2c0
+      size: 37186
     outs:
     - path: raw
       hash: md5
-      md5: d65ecd2c729ddd4b9b6d78cbe07503c5.dir
-      size: 819510532
+      md5: 5654109c8916ce548768de6fefa4418b.dir
+      size: 100447290533
       nfiles: 1
   build:
     cmd: stages/02_build.sh
     deps:
     - path: raw
       hash: md5
-      md5: d65ecd2c729ddd4b9b6d78cbe07503c5.dir
-      size: 819510532
+      md5: 5654109c8916ce548768de6fefa4418b.dir
+      size: 100447290533
       nfiles: 1
     - path: stages/02_build.sh
       hash: md5
@@ -56,6 +56,6 @@ stages:
     outs:
     - path: brick
       hash: md5
-      md5: f02908ed81fe8ae7f109c44e64675353.dir
-      size: 66264759
+      md5: 7d4af2aa92f93fe83815a94949b53fb4.dir
+      size: 8335343993
       nfiles: 2
