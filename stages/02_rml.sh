@@ -17,4 +17,4 @@ echo "Raw path: $rawpath"
 python3 -m morph_kgc stages/ctdbase.ini
 
 # Sort in-place for reproducible hash
-sort -o $rawpath/knowledge-graph.nt $rawpath/knowledge-graph.nt 
+sort -o $rawpath/knowledge-graph.nt $rawpath/knowledge-graph.nt
