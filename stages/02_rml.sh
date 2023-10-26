@@ -8,6 +8,8 @@ set -e
 localpath=$(pwd)
 echo "Local path: $localpath"
 
+eval $( $localpath/vendor/biobricks-script-lib/activate.sh )
+
 # Create raw directory
 rawpath="$localpath/raw"
 mkdir -p $rawpath
@@ -17,4 +19,4 @@ echo "Raw path: $rawpath"
 python3 -m morph_kgc stages/ctdbase.ini
 
 # Sort in-place for reproducible hash
-sort -o $rawpath/knowledge-graph.nt $rawpath/knowledge-graph.nt
+sort-file-inplace $rawpath/knowledge-graph.nt
