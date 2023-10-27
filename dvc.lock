@@ -13,16 +13,21 @@ stages:
       md5: e6339cad00e61b04d411c380c5a5e2db
       size: 81
   rml:
-    cmd: stages/01_rml.sh
+    cmd: stages/02_rml.sh
     deps:
+    - path: data-processed
+      hash: md5
+      md5: 2d848b2955943fb421299940bf329102.dir
+      size: 84657835
+      nfiles: 1
     - path: data-source/brick-manifest
       hash: md5
       md5: e6339cad00e61b04d411c380c5a5e2db
       size: 81
-    - path: stages/01_rml.sh
+    - path: stages/02_rml.sh
       hash: md5
-      md5: 7505592b21798dc600d9f0e61b8ada78
-      size: 399
+      md5: a621e844f7c8202a778fac01f77aff45
+      size: 442
     - path: stages/ctdbase-udfs.py
       hash: md5
       md5: 9aa13d467aa7ca6ca94b283dea7e5c22
@@ -42,20 +47,37 @@ stages:
       size: 100447290533
       nfiles: 1
   build:
-    cmd: stages/02_build.sh
+    cmd: stages/03_build.sh
     deps:
     - path: raw
       hash: md5
       md5: 5654109c8916ce548768de6fefa4418b.dir
       size: 100447290533
       nfiles: 1
-    - path: stages/02_build.sh
+    - path: stages/03_build.sh
       hash: md5
       md5: c1238e69781f72b3603bcb3e84b3f29f
       size: 411
     outs:
     - path: brick
       hash: md5
-      md5: 7d4af2aa92f93fe83815a94949b53fb4.dir
+      md5: 2260beb0fc69c7d348f486ce21585cfd.dir
       size: 8335343993
       nfiles: 2
+  preprocess:
+    cmd: stages/01_preprocess.sh
+    deps:
+    - path: stages/01_preprocess.sh
+      hash: md5
+      md5: 22749a578374bd03da0d5d2a85db60b5
+      size: 319
+    - path: stages/process.sql
+      hash: md5
+      md5: 51336185ab2172d9b66b4bc225ee92a1
+      size: 893
+    outs:
+    - path: data-processed
+      hash: md5
+      md5: 2d848b2955943fb421299940bf329102.dir
+      size: 84657835
+      nfiles: 1
